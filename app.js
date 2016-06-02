@@ -11,6 +11,16 @@ if (window.ContactList === undefined) { window.ContactList = {}; }
 
   //TODO: use this data
 
+//  var people = new context.ContactItem();
+  var peoples = new context.ContactCollection(list);
+
+  peoples.sort();
+
+  var peopleView = new context.ContactCollectionView({el: $('tbody'), model: peoples});
+
+  // You did not need this line of code because the loop through the collection does the job.
+  //var personView = new context.ContactItemView({el: $('tr')});
+  console.log(peoples.toJSON());
 
   console.log('context', context);
 
